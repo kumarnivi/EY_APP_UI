@@ -1,0 +1,244 @@
+.col{
+    background-color: #f4f4f7;
+    border-radius: 10px;
+     height: 273px;
+    max-height: 100%;
+    margin: 3px;
+ 
+}
+
+
+.graph-main {
+  padding: 35px 80px 10px 80px;
+}
+
+
+
+// *******************************************
+
+span {
+    background-color: #ffff;
+    border-radius: 20px;
+    color: black;
+    padding: 3px 10px 3px 10px;
+    font-size: 13px !important;
+  }
+
+  .member-row{
+    padding: 15px;
+    justify-content: center;
+  }
+
+  .member-heading{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2{
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+  }
+
+.num-span{
+    margin-left: 10px;
+    margin-right: 15px;
+    font-weight: 400;
+    
+}
+
+.num{
+    margin-top: 18px;
+}
+
+.online{
+    background-color: rgba(0, 128, 0, 0.352);
+    color: green;
+}
+
+.away{
+    background-color: rgba(255, 0, 0, 0.192);
+    color: red;
+}
+
+  h3{
+    font-size: 15px;
+    font-weight: 400px;
+  }
+
+  h4{
+    font-size: 13px;
+    font-weight: 300;
+    color: orange;
+  }
+
+  .bottom-border{
+    border: 0.01rem solid #80808038;
+    font-weight: 200;
+    margin-top: 10px;
+  }
+
+.team-row{
+    padding-top: 15px;
+}
+
+
+.num{
+  display: flex;
+  
+}
+
+  .child {
+    position: absolute;
+    top: 0;
+  }
+  
+  .child-1 {
+    left: 200px;
+    top: 7px;
+  }
+  
+  .child-2 {
+   
+    left: 216px;
+    top: 7px;
+}
+  
+  
+  .child-3 {
+    left: 232px;
+    top: 7px;
+
+  }
+
+  .child-4 {
+    left: 251px;
+    top: 7px;
+
+  }
+
+  .child-5 {
+    left: 259px;
+    top: 7px;
+}
+
+  
+  .parent {
+    position: relative;
+  
+  }
+
+
+
+  // 
+  
+
+#chart-column{
+  display: block;
+  // min-width: 150px;
+  // max-width: 400px;
+  height: 170px;
+  margin-top: 12px;
+}
+
+h5{
+  font-size: 15px;
+  font-weight: 1000;
+  padding: 17px 20px 0px 21px;
+  margin: 0;
+}
+
+
+// *****************************
+
+#chart-column{
+  display: block;
+  height: 221px;
+  margin-top: 12px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+   
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+   
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+svg.highcharts-root {
+  height: 250px !important;
+}
+
+@media (max-width: 768px) {
+  .col {
+    flex: 0 0 100%; 
+    margin-right: 0; 
+  }
+  
+  
+  .num {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .member-row {
+    margin-top: 20px; 
+  }
+
+  .team-row {
+    margin-top: 20px;
+  }
+
+ .line-chart{
+  width: 100vw;
+ height: 100vh;
+ }
+
+ .bar-chart{
+  width: 100vw;
+ }
+
+
+
+}
+
+

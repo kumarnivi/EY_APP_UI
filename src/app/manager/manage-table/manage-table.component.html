@@ -1,0 +1,119 @@
+<div class="container pt-3">
+    <div class="row main">
+      <div class="">
+        <h3>Leave requests</h3>
+        <div class="leave-container">
+          <div class="row main-row">
+            <div>
+              <select
+                [(ngModel)]="selectedType"
+                style="border: none; background: transparent; outline: none;"
+              >
+                <option value="Sort by" selected>Sort by</option>
+                <option value="All">All</option>
+                <option value="Casual">Casual</option>
+                <option value="Annual">Annual</option>
+                <option value="Medical">Medical</option>
+              </select>
+              <div class="filter">
+                <button class="btn-filter" (click)="filterDataByType()">
+                  Filter <img src="../../../assets/setting.png" alt="filter" />
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <table>
+            <!-- Table headers -->
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>DURATION</th>
+                <th class="text-center">TYPE</th>
+                <th class="text-end">STATUS</th>
+              </tr>
+            </thead>
+  
+            <tbody>
+              <!-- Use *ngFor to loop through data based on current page and itemsPerPage -->
+              <tr
+                *ngFor="
+                  let item of leaveRequests.slice(
+                    (currentPage - 1) * itemsPerPage,
+                    currentPage * itemsPerPage
+                  )
+                "
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+              >
+                <td> <img src="../../../assets/woman-128.png" alt="img" width="30" height="30"> <span class="status">{{item.user}}</span></td>
+                <td>
+                  {{ item.fromDate | dateMonth  }}
+                  {{ item.toDate | dateMonth  }} 
+                  <span class="status"> {{ item.duration }} {{ item.duration === 1 ? 'Day' : 'Days' }} </span></td>
+                <td class="td-type">
+                  <span class="status">
+                    
+                    <span class="status" style="padding-left: 10px; width:16px; height:16px;"
+                    [ngClass]="{
+                        casual: item.category === 'Casual',
+                        annual: item.category === 'Annual',
+                        medical: item.category === 'Medical',
+                        acedamic: item.category === 'Acedamic',
+                        custom :item.category === 'Custom'
+                    }" >
+                        </span>
+                    
+                    {{ item.category }}</span
+                  >
+                </td>
+                <td class="td-status">
+                  <span class="status">
+                    <span
+                      class="status-indicator"
+                      [ngClass]="{
+                        pending: item.status === 'pending',
+                        denied: item.status === 'Denied',
+                        approved: item.status === 'approved'
+                      }"
+                    >
+                      {{ item.round }}
+                    </span>
+                    {{ item.status }}</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <!-- pagination -->
+  
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="prevPage()" aria-label="Previous">
+                  <span class="next" aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li
+                class="page-item"
+                *ngFor="let page of visiblePages"
+                [class.active]="currentPage === page"
+              >
+                <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="nextPage()" aria-label="Next">
+                  <span class="next" aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+

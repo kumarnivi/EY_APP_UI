@@ -1,0 +1,137 @@
+@import '../../../styles.scss';
+
+.container{
+    padding-bottom: 40px;
+}
+
+
+
+.participate-card{
+    position: relative;
+    box-shadow: 0 0 40px 10px #adadad2d;
+    padding: 10px 20px 20px 20px;
+     border-radius: 20px;
+    max-width: 250px;
+    width: 200px;
+    background: #F4F4F7;
+    // background-image: url('../../../assets/woman-128.png');
+}
+
+.participate_img img{
+    border-radius: 50%;
+    margin-bottom: 17px;
+    // background-color:  #016fff1c;
+   
+
+   
+}
+
+
+.col-3 {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+}
+
+.edit-icon{
+  display: grid;
+  justify-content:flex-end;
+}
+
+.log-participate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 78px;
+    right: 9px;
+    // background-color:white; 
+    border-radius: 50%;
+   
+}
+
+
+
+.btn-participate {
+    border: none;
+    margin-top: 5px;
+    max-width: 100%;    
+    background-color: #fff;
+    border-radius: 20px;
+    color: black;
+  }
+
+h5{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.admin-add-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f4f4f7;
+    display: grid;
+    align-items: center;
+}
+
+.sub-admin {
+    display: flex;
+    padding-left: 62px;
+    padding-top: 38px;
+}
+
+
+
+
+
+
+
+
+@media (max-width:866px) {
+
+    .participate_img{
+        object-fit: contain;
+    }
+.participate-card{
+ position: relative;
+}
+
+    .log-participate {
+        position: absolute;
+        top: 78px;
+        right: 9px;
+        background-color: white; 
+       
+        border-radius: 50%;
+      
+
+    }
+    
+   
+}
+
+@media (max-width:767px) {
+    .participate_img{
+        object-fit: contain;
+    }
+    .participate-card{
+        position: relative;
+       }
+
+    .log-participate {
+        position: absolute;
+        top: 78px;
+        right: 9px;
+        background-color: white; 
+        border-radius: 50%;
+       
+    }
+    
+}
+
+
+
+
+

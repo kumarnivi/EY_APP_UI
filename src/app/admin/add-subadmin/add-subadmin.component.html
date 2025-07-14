@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="sub-admin">
+        <div class="row text-center">
+        
+            <div class="col-3" *ngFor="let participates of participate">
+                <div class="participate-card">
+                    <div class="edit-icon" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pen-fill" ></i></div>
+                    <div class="participate_img">
+                        <img src="{{participates.participateImg}}" alt="participate_img" class="img-fluid" width="100" height="100">
+                        
+                    </div>
+                   
+                        <!-- <div class="log-participate">
+                            <img  src="{{participates.logo}}" alt="logo_participate" width="50px" height="50px">
+                        </div> -->
+                 
+                    <h5 class="mb-0">{{participates.name}}</h5>
+                    <!-- <span class="text-muted">{{participates.contant}}</span> -->
+                    <div class="row">
+                        <button class="btn btn-participate" ><img src={{participates.logo}} alt="administrator" width="16" height="16">{{participates.btn}}</button>
+                    </div>
+                   
+                </div>
+            </div>
+          
+        </div>   
+        <button class=" admin-add-btn"><i class="bi bi-plus-circle"></i></button>   
+    </div>
+   
+</div>
+
+
+
+

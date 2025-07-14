@@ -1,0 +1,135 @@
+<div class="container pt-3">
+  <div class="row main">
+      <div class="">
+          <h3>Leave requests</h3>
+          <div class="leave-container">
+              <div class="row main-row">
+                  <div>
+                      <select
+                          [(ngModel)]="selectedType"
+                          style="border: none; background: transparent; outline: none;"
+                      >
+                          <option value="Sort by" selected>Sort by</option>
+                          <option value="All">All</option>
+                          <option value="Casual">Casual</option>
+                          <option value="Annual">Annual</option>
+                          <option value="Medical">Medical</option>
+                      </select>
+                      <div class="filter">
+                          <button class="btn-filter" (click)="filterDataByType()">
+                              Filter <img src="../../../assets/setting.png" alt="filter" />
+                          </button>
+                      </div>
+                  </div>
+              </div>
+
+              <table>
+                  <!-- Table headers -->
+                  <thead>
+                      <tr>
+                          <th>DURATION</th>
+                          <th class="text-center">TYPE</th>
+                          <th class="text-end">STATUS</th>
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                      <!-- Use *ngFor to loop through data based on current page and itemsPerPage -->
+                      <tr
+                          *ngFor="
+                              let request of leaveRequests.slice(
+                                  (currentPage - 1) * itemsPerPage,
+                                  currentPage * itemsPerPage
+                              ), let items of item;
+                          "
+                      >
+                          <td>  {{ request.fromDate | dateMonth  }}
+                            {{ request.toDate | dateMonth  }} 
+                            <span class="status">{{ request.duration }} {{request.duration === 1 ? 'Day' : 'Days'}}</span>
+                        </td>
+                          <td class="td-type">
+                              <span class="status">
+                                <span class="status" style="padding-left: 5px; width:16px; height:16px;"
+                                [ngClass]="{
+                                    casual: request.category === 'Casual',
+                                    annual: request.category === 'Annual',
+                                    medical: request.category === 'Medical',
+                                    acedamic: request.category === 'Acedamic',
+                                    custom :request.category === 'Custom'
+                                }" >
+                                    </span>
+                            {{ request.category }}</span>
+                          </td>
+                          <td class="td-status"  >
+                              <span class="status">
+                                  <span
+                                      class="status-indicator"
+                                      [ngClass]="{
+                                          pending: request.status === 'pending',
+                                          denied: request.status === 'Denied',
+                                          approved: request.status === 'approved'
+                                      }"
+                                  >
+                                     
+                                  </span>
+                                  {{ request.status }}</span
+                              >
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+
+              <!-- pagination -->
+
+              <nav aria-label="Page navigation">
+                  <ul class="pagination">
+                      <li class="page-item" [class.disabled]="currentPage === 1">
+                          <a class="page-link" (click)="prevPage()" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                          </a>
+                      </li>
+                      <li
+                          class="page-item"
+                          *ngFor="let page of visiblePages"
+                          [class.active]="currentPage === page"
+                      >
+                          <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+                      </li>
+                      <li class="page-item" [class.disabled]="currentPage === totalPages">
+                          <a class="page-link" (click)="nextPage()" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                          </a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+    <h2>Leave Requests</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th>Duration</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of leaveRequests">
+          <td>{{ request.category }}</td>
+          <td>{{ request.fromDate | date }}</td> 
+          <td>{{ request.toDate | date }}</td> 
+          <td>{{ request.duration }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+ 
+  

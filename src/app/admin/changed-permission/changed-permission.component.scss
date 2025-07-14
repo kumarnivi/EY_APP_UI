@@ -1,0 +1,112 @@
+@import '../../../styles.scss';
+
+
+h3{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+h1{
+    font-weight: 600;
+}
+
+.successfully-admin {
+    padding-top: 20px;
+}
+
+  .modal-dialog {
+    margin-left: 503px;
+    margin-top: 150px;
+    border-radius: 20px;
+}
+  
+
+.modal-content{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: none;
+    width: 599px;
+    max-height: 100vh;
+    border: none;
+    width: 532px;
+    height: 330px;
+    max-height: 100vh;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+  }
+  
+
+  .modal-header {
+    border-bottom: 2px solid #80808036;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 8px;
+    padding-left: 0;
+    padding-bottom: 8;
+  }
+  
+
+  #exampleModal3{
+    backdrop-filter: blur(1px);
+  }
+
+
+.btn-close{
+    margin-right: 10px;
+    background-color: #f4f4f7;
+    padding: 10px;
+    border-radius: 50%;
+    
+  }
+
+  .btn-closer {
+    padding: 15px 35px 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background-color: #d1d1d7e7;
+    color: black;
+    width: 100%;
+    font-weight: 500;
+}
+
+.btn-add{
+    padding: 15px 35px 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background-color: #83C9B6;
+    color: black;
+    width: 100%;
+    font-weight: 500;
+}
+  
+  .modal-title{
+    font-weight: 900;
+  }
+
+
+  .modal-header {
+    display: block;
+}
+
+
+
+.change {
+    background-color: #f4f4f7;
+    border-radius: 20px;
+    color: black;
+    padding: 3px 10px 3px 10px;
+  }
+
+  .modal-footer{
+    border: none !important;
+  }
+
+
+  span.admin-change {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+}

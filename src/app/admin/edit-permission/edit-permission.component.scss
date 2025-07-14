@@ -1,0 +1,91 @@
+
+.modal-dialog {
+    margin-top: 150px;
+    margin-left: 601px;
+}
+
+.modal-content {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the values as needed */
+    border: none;
+    border-radius: 20px;
+  }
+  
+  .modal-header {
+    border-bottom: 2px solid #80808036;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 8px;
+    padding-left: 0;
+    padding-bottom: 8;
+  }
+  
+
+.btn-add{
+    padding: 15px 35px 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background-color: #83C9B6;
+    color: black;
+    width: 100%;
+    font-weight: 500;
+}
+
+
+
+div#exampleModal {
+    backdrop-filter: blur(2px);
+}
+
+h3{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.admin-one{
+   margin-top: 20px;
+}
+
+.admin-name{
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+select#dropdownField {
+    border: none;
+    background: #f4f4f7;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    outline: none;
+   
+}
+
+
+label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.bi-check-lg{
+    margin-left: 5px;
+}
+
+h1#exampleModalLabel {
+    font-weight: 600;
+}
+
+
+

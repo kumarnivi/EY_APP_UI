@@ -1,0 +1,108 @@
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Apply leave</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form class="modal-body" action="post"  (submit)="submitLeave()">
+       
+       <div class="row">
+        <div class="col-md-5">
+        <h3>Select Day</h3>
+        
+      <ngb-datepicker #dp class="custom-weekdays" (dateSelect)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t" outsideDays="hidden" >
+      </ngb-datepicker>
+
+
+<ng-template #t let-date let-focused="focused">
+	<span
+		class="custom-day "
+		[class.focused]="focused"
+		[class.range]="isRange(date)"
+		[class.faded]="isHovered(date) || isInside(date)"
+		(mouseenter)="hoveredDate = date"
+		(mouseleave)="hoveredDate = null"
+
+	>
+		{{ date.day }}
+	</span>
+</ng-template>
+
+<hr/>
+
+
+  <div class="main-date">
+	<label class="date-pipe form-control">
+	From: {{ ngbDateToDate(fromDate) | date:'dd-MM-yyyy' }} </label>
+	<label class="date-pipe form-control">To: {{ ngbDateToDate(toDate) | date:'dd-MM-yyyy' }} 
+  </label>   
+</div>
+
+          
+        </div>
+        <div class="col-md-1">
+          <div class="divider"></div>
+        </div>
+      
+        
+        <div class="col-md-6">
+        
+           <h3>Select Duration</h3>
+           <div class="row">
+            <div class="form">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text"  name="category" id="category"  placeholder="Full day" class="form-control" [ngClass]="{ 'filled': selectedDate }">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" name="" id="" placeholder="half day" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>comments</h3>
+                    <textarea name="reason" id="" cols="20" rows="5" class="form-control" placeholder="Add message" [(ngModel)]="reason" ></textarea>
+                </div>
+                <div class="row row-optional">
+                    <input type="text" name="" id="" class="form-control mt-3" placeholder="Add attachment(optional)">
+
+                </div>
+              </div>
+            
+            <div class="row">
+                <h3>Leave Summay</h3>
+                <div class="leave-summery-type">
+                  Type : <span class="calender"><img src="../../../assets/schedule.png" alt="calender" width="16" height="16"> {{ getSelectedType() }} </span>
+                </div>
+                <div class="leave-summery-type " >
+              Duration : <span class="calender" style=" margin-right: 20px;"> {{ calculateDaysBetweenDates(fromDate, toDate)}} {{ calculateDaysBetweenDates(fromDate, toDate) === 1 ? 'Day' : 'Days' }} </span> <span class="calender">{{ ngbDateToDate(fromDate) | date:'dd-MM-yyyy' }} </span> <span class="calender"> {{ ngbDateToDate(toDate) | date:'yyyy-MM-dd' }}</span>
+                </div>
+                <div class="leave-summery-type ">
+                 Recipent :  <span class="calender"> <img src="../../../assets/woman-128.png" alt="calender" width="20" height="20"> {{user}} Emile</span>
+                </div>
+            </div>
+           </div>
+        </div>
+       </div>
+
+      
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-add" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal3"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+              <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+            </svg> Confirm and Apply</button>
+
+          <button type="button" class="btn btn-closer" data-bs-dismiss="modal"> <i class="bi bi-x-lg"></i>  Cancel </button>
+
+        </div>
+      </form> 
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <app-leave-request-confirm-modal></app-leave-request-confirm-modal>

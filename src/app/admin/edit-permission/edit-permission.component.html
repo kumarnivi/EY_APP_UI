@@ -1,0 +1,42 @@
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Permission</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <div class="row" style="display: flex; align-items: center;">
+          <div class="div">
+            <img src="../../../assets/woman-128.png" alt="img-admin" width="40" height="40" class="img-admin img-fluid"> <span class="admin-name"> Ralph Edwards</span> 
+
+          </div>
+        </div>
+     <div class="row admin-one">
+      <h3>Sub Admin start date: <span class="date">jan 22 2023 </span></h3>
+     </div>
+     <div class="row">
+      <label for="dropdownField">Change role:</label>
+      <select id="dropdownField" name="dropdownField" >
+        <option value="option1">Sub Admin</option>
+        <option value="option2">Admin</option>
+      </select>
+     </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-add"   data-bs-dismiss="modal"   data-bs-toggle="modal" data-bs-target="#exampleModal3">  Save Changes<i class="bi bi-check-lg"></i></button>
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <app-changed-permission></app-changed-permission>
+  </div>
+

@@ -1,0 +1,242 @@
+@import "../../../styles.scss";
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+
+  thead th {
+    padding:5px 20px 5px 20px; 
+    text-align: left;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+
+  }
+
+  .td-type{
+    text-align: center;
+  }
+
+.td-status{
+  text-align: right;
+}
+
+.leave-container {
+  background-color: #f4f4f7;
+  border-radius: 10px;
+}
+
+.main-row div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.main-row div .filter {
+  padding: 0;
+  margin-right: 48px;
+}
+
+.main {
+  padding: 0px 80px 20px 80px;
+}
+
+span {
+  background-color: #ffff;
+  border-radius: 20px;
+  color: black;
+}
+
+.status {
+  background-color: #ffff;
+  border-radius: 20px;
+  color: black;
+  padding: 3px 10px 3px 10px;
+  margin-right: 5px;
+}
+
+
+th {
+  padding: 20px;
+  margin-left: 15px;
+  width: 200px;
+}
+
+tr {
+  padding: 20px;
+}
+
+td {
+  padding: 10px 20px 10px 20px;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+/* Active page style */
+.pagination .page-item.active .page-link {
+  background-color: transparent !important;
+  border-color: #c083fa !important;
+  color: #000;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* Inactive page style */
+.pagination .page-item:not(.active) .page-link {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #212529;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.pagination {
+  padding: 5px;
+}
+
+.btn-filter {
+  border: none;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.pending {
+  background-color: transparent;
+  border: 2px solid yellow;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.approved {
+  background-color: green;
+}
+
+.denied {
+  background-color: red;
+}
+
+ h3{
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 10px;
+ }
+
+
+//  ****************************************************************************************
+@media (max-width: 767px) {
+  /* CSS for small screens (e.g., mobile) */
+  .leave-container table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+  }
+  
+  .leave-container table tbody td {
+      display: block;
+      text-align: left;
+      width: 100%;
+  }
+
+  .leave-container table tbody td.td-status {
+      text-align: right;
+  }
+}
+
+
+// ****************************
+
+.annual{
+  background-image: url('../../../assets/coconut-tree.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  border: none;
+}
+
+.medical{
+  background-image: url('../../../assets/medical.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  border: none;
+}
+
+
+.acedamic{
+  background-image: url('../../../assets/graduation-hat.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  border: none;
+
+}
+
+.casual{
+  background-image: url('../../../assets/schedule.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  border: none;
+}
+
+
+.custom{
+  background-image: url('../../../assets/hand.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px 16px;
+  border: none;
+
+}
+
+@media (max-width: 767px) {
+  /* CSS for small screens (e.g., mobile) */
+  .leave-container table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+  }
+  
+  .leave-container table tbody td {
+      display: block;
+      text-align: left;
+      width: 100%;
+  }
+
+  .leave-container table tbody td.td-status {
+      text-align: right;
+  }
+} 
+
+
+@media (min-width: 577px) and (max-width: 991px) {
+ 
+ .state{
+  
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+ }
+
+ 
+}

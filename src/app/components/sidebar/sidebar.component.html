@@ -1,0 +1,199 @@
+
+
+<header class=" sidebar open"  [ngClass]="{'shrink': !isSidebarOpen }" role="banner" >
+ 
+    <h1 class="logo" *ngIf="isSidebarOpen">
+      <a href="#"> <img src="../../../assets/Rootcode_io_home_page_9cb4b47132-removebg-preview.png" alt="logo-img" class="img-fluid nav-icon" width="160" height="90"></a>
+    </h1>
+    <div class="nav-wrap" *ngIf="isSidebarOpen">
+      <nav class="main-nav" role="navigation">
+        <ul class="unstyled list-hover-slide">
+          <li > <a   [routerLink]="['/']"  [class.active-button]="activeButton === 1"  class="nav-link active"><img src="../../../assets/dashboard-1.png"  alt="" height="16" width="16" class="img-fluid nav-icon"> Dashboard</a></li>
+          <li >  <a  [routerLink]="['/leaves']"  [ngClass]="{ 'active-link': activeLink === '/leaves' }" > <img src="../../../assets/stopwatch-1.png" alt="" height="16" width="16" class="img-fluid nav-icon" > Leaves</a></li>
+          <li >  <a  [routerLink]="['/']"  [ngClass]="{ 'active-link': activeLink === '/' }" > <img src="../../../assets/settings-1.png" alt="" height="16" width="16" class="img-fluid nav-icon"> Setting</a></li>    
+        </ul>
+
+       
+      </nav>
+      <div class="bottom-btn" >
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Apply leave <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+        <a class="bottom-text" href="#">Get help</a>
+      </div>
+      
+    </div>
+    <div  (click)="toggleSidebar()" class="  toggler">
+      <i class="bi bi-list"></i>
+    </div>
+
+ <div *ngIf="shouldDisplayContent" class="sidebar-content">
+
+  <div class="nav-wrap" >
+    <nav class="main-nav1" role="navigation">
+      <ul class="unstyled list-hover-slide">
+        <li> <a ><img src="../../../assets/logo.png" alt="logo" class="img-fluid nav-icon1" width="20" height="20"></a> </li>
+
+        <li > <a [routerLink]="['/']"  [class.active-button]="activeButton === 1"  class="nav-link active"><img src="../../../assets/dashboard-1.png"  alt="" height="16" width="16" class="img-fluid nav-icon1"> </a></li>
+        <li >  <a  [routerLink]="['/leaves']"  [ngClass]="{ 'active-link': activeLink === '/leaves' }" > <img src="../../../assets/stopwatch-1.png" alt="" height="16" width="16" class="img-fluid nav-icon1" > </a></li>
+        <li >  <a  [routerLink]="['/']"  [ngClass]="{ 'active-link': activeLink === '/' }" > <img src="../../../assets/settings-1.png" alt="" height="16" width="16" class="img-fluid nav-icon1"> </a></li>    
+      </ul>
+
+     
+    </nav>
+   
+    
+  </div>
+  <div  (click)="toggleSidebar()" class="  toggler toggle1">
+    <i class="bi bi-list"></i>
+  </div>
+        </div>
+  
+  </header>
+ 
+<section class="home-section"  [style.transform]="'translateX(' + translateXValue + ')'" >
+ <app-navbar></app-navbar>
+ <app-leave-allocation></app-leave-allocation>
+ <app-leaverequest></app-leaverequest>
+
+  </section>
+
+
+
+
+
+<!-- *************************************************************************************************************************************** -->
+
+
+<!-- Modal -->
+<div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply leave</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row main">   
+          <div class=" col-12">
+              <div class="row">
+                  <h3 class=""> Leave allocation </h3>
+                  <div class="col">
+                      <div class="row grid-box">
+                        <div class="row">
+                          <div class="col-sm-9 ">
+                            <span class="box">Casual Leaves</span>
+                            <span class="days">2</span><span class="d" width="1" height="1">/7</span>
+                    </div>
+                      <div class="col-sm-3">
+                        <img src="../../../assets/schedule.png" alt="calender" height="16" width="16">
+                      </div>
+
+                        </div>
+                         
+                        <div class="row small-text-row">
+                          <span class="small-text box col-sm-5">Available</span>
+                          <button class="btn btn-position hover-button col-sm-7" data-bs-toggle="modal" data-bs-target="#exampleModal2"   (click)="setSelectedType('Casual')" >Apply <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+                            
+                        </div>
+                      </div>
+                     
+                  </div>
+                  <div class="col">
+                      <div class="row grid-box">
+                        <div class="row">
+                          <div class="col-sm-9 ">
+                            <span class="box">Annual Leaves</span>
+                            <span class="days">1</span><span class="d" width="1" height="1">/7</span>
+                     
+                        </div>
+                      <div class="col-sm-3">
+                        <img src="../../../assets/coconut-tree.png" alt="calender" height="16" width="16">
+                      </div>
+                        </div>
+                          
+                        <div class="row small-text-row">
+                          <span class="small-text box col-sm-5">Available</span>
+                          <button class="btn btn-position hover-button col-sm-7" data-bs-toggle="modal" data-bs-target="#exampleModal2"   (click)="setSelectedType('Annual')" >Apply <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+                            
+                        </div>
+                      </div>
+
+                  </div>
+                  <div class="col">
+                      <div class="row grid-box">
+                        <div class="row">
+                          <div class="col-sm-9 ">
+                            <span class="box">Medical Leaves</span>
+                            <span class="days">6</span><span class="d" width="1" height="1">/7</span>
+                    
+                        </div>
+                      <div class="col-sm-3">
+                        <img src="../../../assets/medical.png" alt="calender" height="16" width="16">
+                      </div>
+                        </div>
+                          
+                        <div class="row small-text-row">
+                          <span class="small-text box col-sm-5">Available</span>
+                          <button class="btn btn-position hover-button col-sm-7" data-bs-toggle="modal" data-bs-target="#exampleModal2"   (click)="setSelectedType('Medical')" >Apply <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+                           
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                      <div class="row grid-box">
+                        <div class="row">
+                          <div class="col-sm-9 ">
+                            <span class="box">Acedamic Leaves</span>
+                            <span class="days">1</span><span class="d" width="1" height="1">/7</span>
+                    
+                        </div>
+                      <div class="col-sm-3">
+                        <img src="../../../assets/graduation-hat.png" alt="calender" height="16" width="16">
+                      </div>
+                        </div>
+                         
+                        <div class="row small-text-row">
+                          <span class="small-text box col-sm-5">Available</span>
+                          <button class="btn btn-position hover-button col-sm-7" data-bs-toggle="modal" data-bs-target="#exampleModal2"   (click)="setSelectedType('Acedamic')" >Apply <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+                            
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="row grid-box">
+                        <div class="row">
+                          <div class="col-sm-9 ">
+                            <span class="box">Custom Leaves</span>
+                            <span class="days">7</span><span class="d" width="1" height="1">/7</span>
+                     
+                        </div>
+                      <div class="col-sm-3">
+                        <img src="../../../assets/hand.png" alt="calender" height="16" width="16">
+                      </div>
+                        </div>
+                          
+                        <div class="row small-text-row">
+                          <span class="small-text box col-sm-5">Available</span>
+                          <button class="btn btn-position hover-button col-sm-7" data-bs-toggle="modal" data-bs-target="#exampleModal2"   (click)="setSelectedType('Custom')" >Apply <img src="../../../assets/right-arrow (1).png" alt="" height="16" width="16" style="padding-left: 5px;"></button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-closer" data-bs-dismiss="modal">Cancel <i class="bi bi-x-lg"></i> </button>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-leave-model></app-leave-model>
+
+
+

@@ -1,0 +1,37 @@
+#chart-line{
+    height: 220px ;
+    //  margin-top: 20px;
+}
+h3{
+    font-size: 15px;
+    font-weight: 1000;
+margin-bottom: 0;
+margin-left: 6px;
+
+}
+
+.line{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 15px;
+}
+
+
+.day{
+    background-color: #f4f4f7;
+    border-radius: 20px;
+    color: black;
+    padding: 3px 15px 3px 10px;
+    font-size: 13px !important;
+    margin-right: 5px;
+}
+
+.month{
+    background-color: #fff;
+    border-radius: 20px;
+    color: black;
+    padding: 3px 10px 3px 10px;
+    font-size: 13px !important;  
+}
+
