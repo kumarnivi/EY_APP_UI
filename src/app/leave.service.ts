@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 export class LeaveService {
   selectedType: string = 'Leavs';
 
-  private apiUrl = 'http://localhost:8080';
+  // private apiUrl = 'http://localhost:8080';
 
   // private apiUrl = 'https://employee-app-xbsm.onrender.com'; 
+
+  private apiUrl = 'https://ey-app-api.onrender.com'
 
   constructor(private http: HttpClient) {}
 
