@@ -1,0 +1,16 @@
+<div class="auth-wrapper">
+  <h2 *ngIf="mode === 'login'">Login</h2>
+  <h2 *ngIf="mode === 'register'">Register</h2>
+
+  <form *ngIf="mode === 'login'" (ngSubmit)="login()">
+    <!-- login form fields -->
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a [routerLink]="['/auth/register']">Register here</a></p>
+  </form>
+
+  <form *ngIf="mode === 'register'" (ngSubmit)="register()">
+    <!-- register form fields -->
+    <button type="submit">Register</button>
+    <p>Already have an account? <a [routerLink]="['/auth/login']">Login here</a></p>
+  </form>
+</div>

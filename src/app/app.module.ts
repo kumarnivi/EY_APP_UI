@@ -28,10 +28,11 @@ import { LineChartComponent } from './admin/line-chart/line-chart.component';
 import { ApprovedViewComponent } from './manager/approved-view/approved-view.component';
 import { TeamAvailableComponent } from './manager/team-available/team-available.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DateMonthPipe } from './date-month.pipe'; // Import HttpClientModule
+import { DateMonthPipe } from './date-month.pipe';
+import { AuthComponent } from './components/auth/auth.component'; // Import HttpClientModule
 
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { DateMonthPipe } from './date-month.pipe'; // Import HttpClientModule
     LineChartComponent,
     ApprovedViewComponent,
     TeamAvailableComponent,
-    DateMonthPipe
+    DateMonthPipe,
+    AuthComponent
    
   ],
   imports: [
@@ -70,9 +72,13 @@ import { DateMonthPipe } from './date-month.pipe'; // Import HttpClientModule
       useFactory: adapterFactory,
     }),
     NgbModule,
-    HttpClientModule
-
-    
+    HttpClientModule,
+    BrowserAnimationsModule,
+     ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

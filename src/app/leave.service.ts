@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LeaveService {
+
   selectedType: string = 'Leavs';
 
-  // private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:8080';
+ 
 
-  // private apiUrl = 'https://employee-app-xbsm.onrender.com'; 
-
-  private apiUrl = 'https://ey-app-api.onrender.com'
+  // private apiUrl = 'https://ey-app-api.onrender.com'
 
   constructor(private http: HttpClient) {}
 
@@ -30,8 +30,13 @@ export class LeaveService {
   }
 
 
+  login(data: { email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/auth/login`, data);
+  }
+
+  register(data: { username: string; email: string; password: string; role: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/auth/register`, data);
+  }
 
 
-
-  
 }
