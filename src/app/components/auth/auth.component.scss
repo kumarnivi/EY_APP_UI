@@ -1,0 +1,33 @@
+// styles.scss or global stylesheet
+
+.custom-toast {
+  background-color: #333 !important;  // Custom dark background
+  color: #fff !important;             // Custom text color
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid #00b09b;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-success.custom-toast {
+  background-color: #28a745 !important;
+}
+
+.toast-error.custom-toast {
+  background-color: #dc3545 !important;
+}
+
+.toast-info.custom-toast {
+  background-color: #17a2b8 !important;
+}

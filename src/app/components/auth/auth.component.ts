@@ -4,7 +4,6 @@ import { LeaveService } from '../../leave.service';
 import { ToastrService } from 'ngx-toastr';
 
 
-
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -44,7 +43,7 @@ login(): void {
   this.authService.login(this.loginData).subscribe({
     next: (res) => {
       localStorage.setItem('token', res.token);
-      this.toastr.success('Login successful');
+      this.toastr.success('Login successful',);
       this.router.navigate(['/']);
     },
     error: (err) => {

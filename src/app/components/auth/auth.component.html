@@ -1,16 +1,48 @@
-<div class="auth-wrapper">
-  <h2 *ngIf="mode === 'login'">Login</h2>
-  <h2 *ngIf="mode === 'register'">Register</h2>
+<div class="auth-container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card p-4 shadow-sm" style="width: 100%; max-width: 400px;">
+    <h3 class="text-center mb-4">{{ mode === 'login' ? 'Login' : 'Register' }}</h3>
 
-  <form *ngIf="mode === 'login'" (ngSubmit)="login()">
-    <!-- login form fields -->
-    <button type="submit">Login</button>
-    <p>Don't have an account? <a [routerLink]="['/auth/register']">Register here</a></p>
-  </form>
+    <form *ngIf="mode === 'login'" (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" required [(ngModel)]="loginData.email">
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" required [(ngModel)]="loginData.password">
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+      <p class="text-center mt-3">
+        Don’t have an account? 
+        <a [routerLink]="['/auth/register']" class="text-decoration-none">Register</a>
+      </p>
+    </form>
 
-  <form *ngIf="mode === 'register'" (ngSubmit)="register()">
-    <!-- register form fields -->
-    <button type="submit">Register</button>
-    <p>Already have an account? <a [routerLink]="['/auth/login']">Login here</a></p>
-  </form>
+    <form *ngIf="mode === 'register'" (ngSubmit)="register()" #registerForm="ngForm">
+      <div class="mb-3">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" required [(ngModel)]="registerData.username">
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" required [(ngModel)]="registerData.email">
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" required [(ngModel)]="registerData.password">
+      </div>
+      <div class="mb-3">
+        <label>Role</label>
+        <select class="form-select" name="role" [(ngModel)]="registerData.role" required>
+          <option value="user">User</option>
+          <option value="manager">Manager</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Register</button>
+      <p class="text-center mt-3">
+        Already have an account? 
+        <a [routerLink]="['/auth/login']" class="text-decoration-none">Login</a>
+      </p>
+    </form>
+  </div>
 </div>

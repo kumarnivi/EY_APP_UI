@@ -78,6 +78,10 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
+       closeButton: true,
+      progressBar: true,
+      toastClass: 'ngx-toastr custom-toast',
+    
     }),
   ],
   providers: [],
