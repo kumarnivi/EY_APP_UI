@@ -12,11 +12,11 @@ import { AuthComponent } from './components/auth/auth.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // 🔁 Default to login
-
+   { path: 'home', component: HomeComponent },
   { path: 'model', component: LeaveModelComponent },
   { path: 'admin', component: NavsideComponent, canActivate: [AdminGuard] },
   { path: 'leaves', component: LeavesComponent, canActivate: [AuthGuard] },
-  { path: 'manager', component: MangerViewComponent, canActivate: [AuthGuard] },
+  { path: 'manager', component: MangerViewComponent, canActivate: [AdminGuard] },
   { path: 'auth/:mode', component: AuthComponent }, // ✅ one component for both
 ];
 

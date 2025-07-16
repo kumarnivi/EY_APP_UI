@@ -43,8 +43,16 @@ login(): void {
   this.authService.login(this.loginData).subscribe({
     next: (res) => {
       localStorage.setItem('token', res.token);
+      localStorage.setItem('role', res.user.role); 
       this.toastr.success('Login successful',);
-      this.router.navigate(['/']);
+      // Role base Navigation
+      if (res.user.role === 'admin') {
+        this.router.navigate(['/admin']);
+      } else if (res.user.role === 'manager') {
+        this.router.navigate(['/manager']);
+      } else {
+        this.router.navigate(['/home']);
+      }
     },
     error: (err) => {
       this.toastr.error(err.error.message || 'Login failed');
