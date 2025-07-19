@@ -14,7 +14,7 @@ import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // 🔁 Default to login
-   { path: 'home', component: HomeComponent, canActivate: [RoleGuard], data: { roles: ['admin', 'manager'] } },
+   { path: 'home', component: HomeComponent, canActivate: [RoleGuard], data: { roles: ['admin', 'manager','user'] } },
   { path: 'model', component: LeaveModelComponent, canActivate: [RoleGuard], data: { roles: ['admin', 'manager'] } },
   { path: 'admin', component: NavsideComponent, canActivate: [AdminGuard] },
   { path: 'leaves', component: LeavesComponent, canActivate: [AuthGuard] },
@@ -28,3 +28,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
